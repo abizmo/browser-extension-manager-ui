@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 400 700; /* rango de peso */
+  font-stretch: 75% 125%; /* rango de anchura opcional */
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ff-sans: "Noto Sans", system-ui, sans-serif;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Global */
+body {
+  font-family: var(--ff-sans);
+}

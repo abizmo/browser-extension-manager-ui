@@ -1,5 +1,6 @@
 ---
 import Extensions from "@components/extensions";
+import SwitchTheme from "@components/switch-theme";
 import Root from "@layouts/root.astro";
 ---
 
@@ -9,11 +10,7 @@ import Root from "@layouts/root.astro";
       <img src="/images/logo.svg" alt="extensions" />
       <span>Extensions</span>
     </div>
-    <button>
-      <img src="/images/icon-moon.svg" alt="switch to dark" />
-      <img src="/images/icon-sun.svg" alt="switch to light" />
-      <span>switch theme</span>
-    </button>
+    <SwitchTheme client:load />
   </header>
   <main>
     <Extensions client:load />

@@ -1,7 +1,54 @@
 ---
+import extensions from "@data/data.json";
 import Root from "@layouts/root.astro";
 ---
 
 <Root title="Browser extensions manager UI">
-  <h1>Astro</h1>
+  <header>
+    <div>
+      <img src="/images/logo.svg" alt="extensions" />
+      <span>Extensions</span>
+    </div>
+    <button>
+      <img src="/images/icon-moon.svg" alt="switch to dark" />
+      <img src="/images/icon-sun.svg" alt="switch to light" />
+      <span>switch theme</span>
+    </button>
+  </header>
+  <main>
+    <header>
+      <h1>Extensions List</h1>
+      <ul>
+        <li><button>All</button></li>
+        <li><button>Active</button></li>
+        <li><button>Inactive</button></li>
+      </ul>
+    </header>
+    <main>
+      <ul>
+        {
+          extensions.map(({ logo, name, description, isActive }) => (
+            <li>
+              <article>
+                <main>
+                  <img src={logo} alt={name} />
+                  <div>
+                    <h2>{name}</h2>
+                    <p>{description}</p>
+                  </div>
+                </main>
+                <footer>
+                  <button>Remove</button>
+                  <label>
+                    <input type="checkbox" checked={isActive} />
+                    <span>toggle on/off</span>
+                  </label>
+                </footer>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </main>
 </Root>

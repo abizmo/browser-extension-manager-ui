@@ -9,8 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^4.0.11",
     "@astrojs/vercel": "^8.1.4",
-    "astro": "^5.7.13"
+    "astro": "^5.7.13",
+    "preact": "^10.26.6"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.32.1",

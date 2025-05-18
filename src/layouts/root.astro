@@ -1,0 +1,23 @@
+---
+import FrontendMentorFooter from "@components/frontend-mentor-footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Frontend Mentor | {title}</title>
+  </head>
+  <body>
+    <slot />
+    <FrontendMentorFooter />
+  </body>
+</html>

@@ -1,44 +1,20 @@
-import { useEffect, useState } from "preact/hooks";
+import useExtensions from "src/hooks/useExtensions";
 
-import data from "@data/data.json";
-
-export interface Extension {
-  logo: string;
-  name: string;
-  description: string;
-  isActive: boolean;
-}
+import type { Extension } from "src/types/extensions";
 
 interface ExtensionsProps {}
 
-type ExtensionFilter = "all" | "active" | "inactive";
-
 export default function Extensions({}: ExtensionsProps) {
-  const [extensions, setExtensions] = useState<Extension[]>([]);
-  const [filter, setFilter] = useState<ExtensionFilter>("all");
-
-  useEffect(() => {
-    setExtensions(data as Extension[]);
-  }, []);
+  const { extensions, removeExtension, toggleExtensionState, filterBy } =
+    useExtensions();
 
   const handleRemove = (extensionName: string) => {
-    setExtensions((state) => {
-      return state.filter(({ name }) => name !== extensionName);
-    });
+    removeExtension(extensionName);
   };
 
   const handleExtensionState = (extensionName: string) => {
-    setExtensions((state) =>
-      state.map((ext) =>
-        ext.name !== extensionName ? ext : { ...ext, isActive: !ext.isActive },
-      ),
-    );
+    toggleExtensionState(extensionName);
   };
-
-  const filteredExtensions = extensions.filter(
-    (ext) =>
-      filter === "all" || (filter === "active" ? ext.isActive : !ext.isActive),
-  );
 
   return (
     <div>
@@ -46,22 +22,22 @@ export default function Extensions({}: ExtensionsProps) {
         <h1>Extensions List</h1>
         <ul>
           <li>
-            <button onClick={() => setFilter("all")}>All</button>
+            <button onClick={() => filterBy("all")}>All</button>
           </li>
           <li>
-            <button onClick={() => setFilter("active")}>Active</button>
+            <button onClick={() => filterBy("active")}>Active</button>
           </li>
           <li>
-            <button onClick={() => setFilter("inactive")}>Inactive</button>
+            <button onClick={() => filterBy("inactive")}>Inactive</button>
           </li>
         </ul>
       </header>
       <main>
-        {filteredExtensions.length === 0 ? (
+        {extensions.length === 0 ? (
           <p>No extensions</p>
         ) : (
           <ul>
-            {filteredExtensions.map((extension) => (
+            {extensions.map((extension) => (
               <li>
                 <Extension
                   {...extension}

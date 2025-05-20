@@ -9,6 +9,33 @@
 
 :root {
   --ff-sans: "Noto Sans", system-ui, sans-serif;
+
+  --hsl-neutral-900: 227 75 14;
+  --hsl-neutral-800: 226 25 17;
+  --hsl-neutral-700: 225 23 24;
+  --hsl-neutral-600: 226 11 37;
+  --hsl-neutral-300: 0 0 78;
+  --hsl-neutral-200: 217 61 90;
+  --hsl-neutral-100: 0 0 93;
+  --hsl-neutral-0: 200 60 99;
+  --hsl-red-700: 3 77 44;
+  --hsl-red-500: 3 71 56;
+  --hsl-red-400: 3 86 64;
+
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  --background: hsl(var(--hsl-neutral-100));
+  --background-gradient: var(--light-gradient);
+  --foreground: hsl(var(--hsl-neutral-900));
+  --surface-background: hsl(var(--hsl-neutral-0));
+}
+
+.dark {
+  --background: hsl(var(--hsl-neutral-900));
+  --background-gradient: var(--dark-gradient);
+  --foreground: hsl(var(--hsl-neutral-0));
+  --surface-background: hsl(var(--hsl-neutral-800));
 }
 
 /* Reset */
@@ -41,4 +68,7 @@ img {
 /* Global */
 body {
   font-family: var(--ff-sans);
+  background-color: var(--background);
+  background-image: var(--background-gradient);
+  color: var(--foreground);
 }

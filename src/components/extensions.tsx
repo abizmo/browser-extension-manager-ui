@@ -1,5 +1,7 @@
 import useExtensions from "src/hooks/useExtensions";
 
+import styles from "@styles/extensions.module.css";
+
 import type { Extension } from "src/types/extensions";
 
 interface ExtensionsProps {}
@@ -67,7 +69,7 @@ function Extension({
   onChange,
 }: ExtensionProps) {
   return (
-    <article>
+    <article class={styles.extension}>
       <main>
         <img src={logo} alt={name} />
         <div>

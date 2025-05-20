@@ -1,3 +1,34 @@
+.extensions {
+  & > * + * {
+    margin-top: 0.5rem;
+  }
+}
+
 .extension {
   background-color: var(--surface-background);
+  border: 1px solid var(--surface-border);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.extensionBody {
+  align-items: start;
+  gap: 1rem;
+}
+
+.extensionName {
+  margin-bottom: 1rem;
+}
+
+.extensionFooter {
+  align-items: center;
+}
+
+.extensionButton {
+  background-color: var(--surface-background);
+  border: 1px solid var(--surface-border);
+  border-radius: 9999rem;
+  padding: 0.5rem 1rem;
+  color: var(--foreground);
+  font-weight: var(--fw-bold);
 }

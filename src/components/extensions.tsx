@@ -2,8 +2,9 @@ import useExtensions from "src/hooks/useExtensions";
 
 import styles from "@styles/extensions.module.css";
 
-import type { Extension } from "src/types/extensions";
+import Switch from "./switch";
 
+import type { Extension } from "src/types/extensions";
 interface ExtensionsProps {}
 
 export default function Extensions({}: ExtensionsProps) {
@@ -38,7 +39,7 @@ export default function Extensions({}: ExtensionsProps) {
         {extensions.length === 0 ? (
           <p>No extensions</p>
         ) : (
-          <ul>
+          <ul className={styles.extensions}>
             {extensions.map((extension) => (
               <li>
                 <Extension
@@ -70,23 +71,21 @@ function Extension({
 }: ExtensionProps) {
   return (
     <article class={styles.extension}>
-      <main>
+      <main className={`${styles.extensionBody} flex`}>
         <img src={logo} alt={name} />
         <div>
-          <h2>{name}</h2>
+          <h2 className={styles.extensionName}>{name}</h2>
           <p>{description}</p>
         </div>
       </main>
-      <footer>
-        <button onClick={() => onRemove(name)}>Remove</button>
-        <label>
-          <input
-            type="checkbox"
-            checked={isActive}
-            onChange={() => onChange(name)}
-          />
-          <span>toggle on/off</span>
-        </label>
+      <footer className={`${styles.extensionFooter} flex`}>
+        <button
+          className={styles.extensionButton}
+          onClick={() => onRemove(name)}
+        >
+          Remove
+        </button>
+        <Switch isActive={isActive} onChange={onChange} name={name} />
       </footer>
     </article>
   );

@@ -9,6 +9,8 @@
 
 :root {
   --ff-sans: "Noto Sans", system-ui, sans-serif;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
   --fw-bold: 500;
   --fw-black: 700;
 
@@ -83,15 +85,17 @@ h2 {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* Global */
 body {
   font-family: var(--ff-sans);
+  font-size: var(--fs-base);
   background-color: var(--background);
   background-image: var(--background-gradient);
   color: var(--foreground);
+  min-height: 100dvh;
 }
 
 /* Utilities */

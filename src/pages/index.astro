@@ -1,14 +1,11 @@
 ---
 import Extensions from "@components/extensions";
-import SwitchTheme from "@components/switch-theme";
+import Header from "@components/header.astro";
 import Root from "@layouts/root.astro";
 ---
 
 <Root title="Browser extensions manager UI">
-  <header>
-    <img src="/images/logo.svg" alt="extensions" />
-    <SwitchTheme client:load />
-  </header>
+  <Header />
   <main>
     <Extensions client:load />
   </main>

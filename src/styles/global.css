@@ -33,9 +33,14 @@
   --background-gradient: var(--light-gradient);
   --foreground: hsl(var(--hsl-neutral-900));
   --surface-background: hsl(var(--hsl-neutral-0));
-  --surface-border: hsl(var(--hsl-neutral-200));
+  --surface-border: hsl(var(--hsl-neutral-100));
+  --surface-shadow: hsl(var(--hsl-neutral-300) / 0.5);
   --accent: hsl(var(--hsl-red-700));
   --switch-bg: hsl(var(--hsl-neutral-300));
+  --switch-theme-bg: hsl(var(--hsl-neutral-100));
+  --switch-theme-hover: hsl(var(--hsl-neutral-300));
+  --focus-border: hsl(var(--hsl-neutral-0));
+  --focus-outline: hsl(var(--hsl-red-500));
 }
 
 .dark {
@@ -44,8 +49,13 @@
   --foreground: hsl(var(--hsl-neutral-0));
   --surface-background: hsl(var(--hsl-neutral-800));
   --surface-border: hsl(var(--hsl-neutral-600));
+  --surface-shadow: hsl(var(--hsl-neutral-700) / 0.7);
   --accent: hsl(var(--hsl-red-400));
   --switch-bg: hsl(var(--hsl-neutral-600));
+  --switch-theme-bg: hsl(var(--hsl-neutral-700));
+  --switch-theme-hover: hsl(var(--hsl-neutral-600));
+  --focus-border: hsl(var(--hsl-neutral-900));
+  --focus-outline: hsl(var(--hsl-red-400));
 }
 
 /* Reset */

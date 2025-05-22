@@ -1,0 +1,18 @@
+---
+import Logo from "@assets/logo.svg";
+import SwitchTheme from "./switch-theme";
+---
+
+<header class="flex">
+  <Logo />
+  <SwitchTheme client:load />
+</header>
+
+<style>
+  header {
+    background-color: var(--surface-background);
+    box-shadow: 0px 2px 4px var(--surface-shadow);
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+</style>

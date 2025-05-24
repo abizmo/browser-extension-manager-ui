@@ -1,0 +1,35 @@
+.filterList {
+  gap: 1rem;
+}
+
+.filter {
+  background-color: var(--surface-background);
+  border: 1px solid var(--surface-border);
+  color: var(--foreground);
+  box-shadow: 0px 0px 4px var(--surface-shadow);
+
+  padding: 1rem 1.5rem;
+  border-radius: 9999rem;
+
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-narrow);
+
+  text-transform: capitalize;
+}
+
+.filter:focus {
+  background-color: var(--focus-bg);
+}
+
+.filter.active {
+  background-color: var(--accent);
+  border-color: transparent;
+  color: var(--accent-fg);
+}
+
+.filter:focus,
+.filter.active:focus {
+  border: 1px solid var(--focus-border);
+  outline: 1px solid var(--focus-outline);
+}

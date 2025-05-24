@@ -2,14 +2,14 @@ import useExtensions from "src/hooks/useExtensions";
 
 import styles from "@styles/extensions.module.css";
 
+import Filters from "./filters";
 import Switch from "./switch";
 
 import type { Extension } from "src/types/extensions";
 interface ExtensionsProps {}
 
 export default function Extensions({}: ExtensionsProps) {
-  const { extensions, removeExtension, toggleExtensionState, filterBy } =
-    useExtensions();
+  const { extensions, removeExtension, toggleExtensionState } = useExtensions();
 
   const handleRemove = (extensionName: string) => {
     removeExtension(extensionName);
@@ -21,19 +21,9 @@ export default function Extensions({}: ExtensionsProps) {
 
   return (
     <div>
-      <header>
-        <h1>Extensions List</h1>
-        <ul>
-          <li>
-            <button onClick={() => filterBy("all")}>All</button>
-          </li>
-          <li>
-            <button onClick={() => filterBy("active")}>Active</button>
-          </li>
-          <li>
-            <button onClick={() => filterBy("inactive")}>Inactive</button>
-          </li>
-        </ul>
+      <header className={`${styles.extensionsHeader} flex`}>
+        <h1 className={styles.extensionsTitle}>Extensions List</h1>
+        <Filters />
       </header>
       <main>
         {extensions.length === 0 ? (
@@ -41,7 +31,7 @@ export default function Extensions({}: ExtensionsProps) {
         ) : (
           <ul className={styles.extensions}>
             {extensions.map((extension) => (
-              <li>
+              <li key={extension.name}>
                 <Extension
                   {...extension}
                   onRemove={handleRemove}

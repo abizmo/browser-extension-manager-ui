@@ -18,6 +18,11 @@
   text-transform: capitalize;
 }
 
+.filter:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .filter:focus {
   background-color: var(--focus-bg);
 }

@@ -69,6 +69,7 @@ export default function useExtensions() {
     extensions: filteredExtensions,
     removeExtension,
     toggleExtensionState,
+    filter,
     filterBy,
     loading,
     error,

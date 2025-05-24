@@ -11,8 +11,12 @@
   --ff-sans: "Noto Sans", system-ui, sans-serif;
   --fs-base: 1rem;
   --fs-lg: 1.25rem;
+  --fs-xl: 2rem;
   --fw-bold: 500;
   --fw-black: 700;
+  --ls-tight: 0.03em;
+  --lh-narrow: 1;
+  --lh-wide: 1.4;
 
   --hsl-neutral-900: 227 75 14;
   --hsl-neutral-800: 226 25 17;
@@ -36,10 +40,12 @@
   --surface-border: hsl(var(--hsl-neutral-100));
   --surface-shadow: hsl(var(--hsl-neutral-300) / 0.5);
   --accent: hsl(var(--hsl-red-700));
+  --accent-fg: hsl(var(--hsl-neutral-0));
   --switch-bg: hsl(var(--hsl-neutral-300));
   --switch-theme-bg: hsl(var(--hsl-neutral-100));
   --switch-theme-hover: hsl(var(--hsl-neutral-300));
-  --focus-border: hsl(var(--hsl-neutral-0));
+  --focus-bg: hsl(var(--hsl-neutral-0));
+  --focus-border: var(--background);
   --focus-outline: hsl(var(--hsl-red-500));
 }
 
@@ -51,9 +57,11 @@
   --surface-border: hsl(var(--hsl-neutral-600));
   --surface-shadow: hsl(var(--hsl-neutral-700) / 0.7);
   --accent: hsl(var(--hsl-red-400));
+  --accent-fg: hsl(var(--hsl-neutral-900));
   --switch-bg: hsl(var(--hsl-neutral-600));
   --switch-theme-bg: hsl(var(--hsl-neutral-700));
   --switch-theme-hover: hsl(var(--hsl-neutral-600));
+  --focus-bg: hsl(var(--hsl-neutral-600));
   --focus-border: hsl(var(--hsl-neutral-900));
   --focus-outline: hsl(var(--hsl-red-400));
 }
@@ -78,6 +86,7 @@ button {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 img {
@@ -85,17 +94,18 @@ img {
   display: block;
 }
 
+h1,
 h2,
 p {
   margin-top: 0;
 }
 
 h2 {
-  line-height: 1;
+  line-height: var(--lh-narrow);
 }
 
 p {
-  line-height: 1.4;
+  line-height: var(--lh-wide);
 }
 
 /* Global */

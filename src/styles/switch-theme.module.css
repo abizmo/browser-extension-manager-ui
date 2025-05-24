@@ -15,6 +15,7 @@
 }
 
 .button:focus {
+  background-color: var(--switch-theme-hover);
   border: 1px solid var(--focus-border);
   outline: 1px solid var(--focus-outline);
 }

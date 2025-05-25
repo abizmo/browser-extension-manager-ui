@@ -1,0 +1,16 @@
+---
+
+---
+
+<div class="container">
+  <slot />
+</div>
+
+<style>
+  .container {
+    --padding-inline: 1rem;
+    --max-width: 72rem;
+    width: min(var(--max-width), 100% - (var(--padding-inline) * 2));
+    margin-inline: auto;
+  }
+</style>

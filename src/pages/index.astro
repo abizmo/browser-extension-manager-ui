@@ -1,12 +1,25 @@
 ---
+import Container from "@components/container.astro";
 import Extensions from "@components/extensions";
 import Header from "@components/header.astro";
 import Root from "@layouts/root.astro";
 ---
 
 <Root title="Browser extensions manager UI">
-  <Header />
-  <main>
-    <Extensions client:load />
-  </main>
+  <Container>
+    <Header class="main-header" />
+    <main>
+      <Extensions client:load />
+    </main>
+  </Container>
 </Root>
+
+<style>
+  .main-header {
+    margin-block-end: 2rem;
+
+    @media (width >= 48rem) {
+      margin-block-end: 4rem;
+    }
+  }
+</style>

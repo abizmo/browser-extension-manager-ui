@@ -1,9 +1,14 @@
 ---
 import Logo from "@assets/logo.svg";
+import type { HTMLAttributes } from "astro/types";
 import SwitchTheme from "./switch-theme";
+
+interface Props extends HTMLAttributes<"header"> {}
+
+const { class: className, ...rest } = Astro.props;
 ---
 
-<header class="flex">
+<header class:list={["flex", className]} {...rest}>
   <Logo />
   <SwitchTheme client:load />
 </header>

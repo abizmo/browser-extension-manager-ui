@@ -54,3 +54,16 @@
   color: var(--foreground);
   font-weight: var(--fw-bold);
 }
+
+.extensionButton:hover {
+  background-color: var(--accent) !important;
+  border-color: transparent;
+  color: var(--accent-fg);
+  cursor: pointer;
+}
+
+.extensionButton:focus {
+  background-color: var(--remove-focus-bg);
+  border: 1px solid var(--focus-border);
+  outline: 1px solid var(--focus-outline);
+}

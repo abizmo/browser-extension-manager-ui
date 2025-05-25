@@ -47,6 +47,7 @@
   --focus-bg: hsl(var(--hsl-neutral-0));
   --focus-border: var(--background);
   --focus-outline: hsl(var(--hsl-red-500));
+  --remove-focus-bg: hsl(var(--hsl-neutral-100));
 }
 
 .dark {
@@ -64,6 +65,7 @@
   --focus-bg: hsl(var(--hsl-neutral-600));
   --focus-border: hsl(var(--hsl-neutral-900));
   --focus-outline: hsl(var(--hsl-red-400));
+  --remove-focus-bg: hsl(var(--hsl-neutral-600));
 }
 
 /* Reset */

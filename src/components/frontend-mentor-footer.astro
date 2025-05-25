@@ -1,8 +1,12 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 
+interface Props extends HTMLAttributes<"footer"> {}
+
+const { class: className, ...rest } = Astro.props;
 ---
 
-<footer class="attribution">
+<footer class:list={["attribution", className]} {...rest}>
   Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
     >Frontend Mentor</a
   >. Coded by <a href="https://www.abizmo.dev">Abián Izquierdo</a>.

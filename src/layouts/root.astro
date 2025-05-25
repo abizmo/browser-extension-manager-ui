@@ -21,6 +21,16 @@ const { title } = Astro.props;
   <body>
     <ThemeEffect client:load />
     <slot />
-    <FrontendMentorFooter />
+    <FrontendMentorFooter class="fm-footer" />
   </body>
 </html>
+
+<style>
+  .fm-footer {
+    margin-block: 2rem;
+
+    @media (width >= 48rem) {
+      margin-block: 4rem;
+    }
+  }
+</style>

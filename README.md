@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/abizmo/browser-extension-manager-ui](https://github.com/abizmo/browser-extension-manager-ui)
+- Live Site URL: [https://browser-extension-manager-ui-drab.vercel.app/](https://browser-extension-manager-ui-drab.vercel.app/)
 
 ## My process
 

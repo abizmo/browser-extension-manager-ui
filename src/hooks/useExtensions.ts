@@ -1,10 +1,9 @@
 import { useEffect, useState } from "preact/hooks";
 
-import type { Extension, ExtensionFilter } from "src/types/extensions";
+import type { Extension } from "src/types/extensions";
 
 export default function useExtensions() {
   const [extensions, setExtensions] = useState<Extension[]>([]);
-  const [filter, setFilter] = useState<ExtensionFilter>("all");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -58,19 +57,10 @@ export default function useExtensions() {
     );
   };
 
-  const filterBy = (type: ExtensionFilter) => setFilter(type);
-
-  const filteredExtensions = extensions.filter(
-    (ext) =>
-      filter === "all" || (filter === "active" ? ext.isActive : !ext.isActive),
-  );
-
   return {
-    extensions: filteredExtensions,
+    extensions,
     removeExtension,
     toggleExtensionState,
-    filter,
-    filterBy,
     loading,
     error,
   };

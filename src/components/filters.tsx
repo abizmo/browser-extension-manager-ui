@@ -1,15 +1,17 @@
-import useExtensions from "src/hooks/useExtensions";
 import { filters } from "src/types/extensions";
 
 import styles from "@styles/filters.module.css";
 
-export default function Filters() {
-  const { filter, filterBy } = useExtensions();
+interface FiltersProps {
+  active: string;
+  onFilter: (f: any) => void;
+}
+export default function Filters({ active, onFilter }: FiltersProps) {
   return (
     <ul className={`${styles.filterList} flex`}>
       {filters.map((f) => (
         <li key={f}>
-          <Filter active={filter === f} label={f} onClick={() => filterBy(f)} />
+          <Filter active={active === f} label={f} onClick={() => onFilter(f)} />
         </li>
       ))}
     </ul>

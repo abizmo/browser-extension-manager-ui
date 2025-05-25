@@ -41,8 +41,14 @@ input:checked + .slider {
   background-color: var(--accent);
 }
 
+input:checked:hover + .slider {
+  background-color: var(--accent-hover);
+}
+
 input:focus + .slider {
   box-shadow: 0 0 1px var(--accent);
+  border: 1px solid var(--focus-border);
+  outline: 1px solid var(--focus-outline);
 }
 
 input:checked + .slider:before {

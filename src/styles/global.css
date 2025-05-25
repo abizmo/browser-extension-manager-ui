@@ -41,6 +41,7 @@
   --surface-shadow: hsl(var(--hsl-neutral-300) / 0.5);
   --accent: hsl(var(--hsl-red-700));
   --accent-fg: hsl(var(--hsl-neutral-0));
+  --accent-hover: hsl(var(--hsl-red-400));
   --switch-bg: hsl(var(--hsl-neutral-300));
   --switch-theme-bg: hsl(var(--hsl-neutral-100));
   --switch-theme-hover: hsl(var(--hsl-neutral-300));
@@ -59,6 +60,7 @@
   --surface-shadow: hsl(var(--hsl-neutral-700) / 0.7);
   --accent: hsl(var(--hsl-red-400));
   --accent-fg: hsl(var(--hsl-neutral-900));
+  --accent-hover: hsl(var(--hsl-red-700));
   --switch-bg: hsl(var(--hsl-neutral-600));
   --switch-theme-bg: hsl(var(--hsl-neutral-700));
   --switch-theme-hover: hsl(var(--hsl-neutral-600));
